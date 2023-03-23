@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,regular,500,600,700,800,900);
+#root {
+  height: 100%;
+}
+
+.App {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1170px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+  color: #343434;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.text-orange {
+  color: #ff9619;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+@media (max-width: 1169px) {
+  .title {
+    font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1170 - 320)));
+  }
+}
+
+.gray {
+  background: #5b5b5b;
+}
+
+.green {
+  background: #a9c2be;
+}
+
+.orange {
+  background: #ff9619;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  background: #ff9619;
+  padding: 13px 0;
+  -webkit-transition: background 0.15s ease-in;
+  transition: background 0.15s ease-in;
+}
+
+.btn:hover {
+  background: #5b5b5b;
+}
+
+.input-hide:checked .label-checkbox {
+  background: red;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(24, 24, 24, 0.7);
+  -webkit-backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
+  z-index: 999;
+}
+
+.modal__overlay {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

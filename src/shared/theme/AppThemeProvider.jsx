@@ -1,0 +1,27 @@
+import React from 'react';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core';
+import { getTheme } from './getTheme';
+import useLocalStorage from 'react-use-localstorage';
+
+export const AppThemeContext = React.createContext(
+  {
+    currentThemeName: 'lightTheme',
+    setCurrentThemeName: () => {},
+  }
+);
+
+export function AppThemeProvider({ children }) {
+  const [currentThemeName, setCurrentThemeName] = useLocalStorage('theme', 'lightTheme');
+  const currentTheme = createTheme(getTheme(currentThemeName));
+  const contextValue = {
+    currentThemeName,
+    setCurrentThemeName,
+  };
+
+  return (
+    <AppThemeContext.Provider value={contextValue}>
+      <MuiThemeProvider theme={currentTheme}>{children}</MuiThemeProvider>
+    </AppThemeContext.Provider>
+  );
+}

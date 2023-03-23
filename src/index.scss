@@ -1,0 +1,134 @@
+@import 'assets/styles/colors';
+@import 'assets/styles/media';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  -webkit-tap-highlight-color: transparent;
+
+  @include _1200 {
+    font-size: 16px;
+  }
+}
+
+input,
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+main{
+  margin-top: 100px;
+}
+
+.container{ 
+  max-width: 1260px;
+  margin: 0 auto;
+  @media(max-width: 920px){
+padding: 0 10px;
+  }
+}
+.main-container{
+display: flex;
+justify-content: space-between;
+gap: 20px;
+
+@media(max-width: 1300px){
+  padding: 0 20px;
+}
+@media(max-width: 998px){
+flex-wrap: wrap-reverse;
+justify-content:center;
+padding: 0 10px;
+}
+}
+.flex {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+}
+
+
+.link-primary {
+  position: relative;
+  font-weight: 500;
+  transition: transform .3s;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 50%;
+    height: 2px;
+    background-color: $blue-hover;
+    transform: scaleX(0);
+    transition: transform .3s;
+  }
+
+  &:after {
+    left: 50%;
+    transform-origin: left;
+  }
+
+  &:before {
+    right: 50%;
+    transform-origin: right;
+  }
+
+  &:hover:after,
+  &:active:after,
+  &:focus:after,
+  &:hover:before,
+  &:active:before,
+  &:focus:before {
+    transform: scaleX(1.05);
+  }
+}
+
+.mb-30 {
+  margin-bottom: 30px!important;
+}
+
+.m-0 {
+  margin: 0!important;
+}
+
+.VictoryContainer {
+  font-size: 0;
+}
